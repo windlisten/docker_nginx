@@ -21,10 +21,10 @@ RUN cd /usr/local && \
     rm -rf /etc/nginx/* && \
     mv /usr/local/nginx-config/* /etc/nginx/ && \
     mv /usr/local/nginx.init /etc/init.d/nginx && \
-    chmod a+x /etc/init.d/nginx
+    chmod a+x /etc/init.d/nginx && \
+    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    RUN yum clean all 
 
-
-# RUN yum clean all 
 CMD tail -f /dev/null
 
 EXPOSE 80
